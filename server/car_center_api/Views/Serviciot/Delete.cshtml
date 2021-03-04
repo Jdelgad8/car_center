@@ -1,0 +1,45 @@
+﻿@model car_center_api.Models.Serviciot
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Serviciot</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.VlrMin)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.VlrMin)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.VlrMax)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.VlrMax)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DurMin)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DurMin)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CodTipoNavigation)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CodTipoNavigation.Descripcion)
+        </dd class>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="CodSer" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

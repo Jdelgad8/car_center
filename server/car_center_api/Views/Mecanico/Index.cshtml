@@ -1,0 +1,113 @@
+﻿@model IEnumerable<car_center_api.Models.Mecanico>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PrimNom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SeguNom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PrimApe)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SeguApe)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NroDoc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NroCel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Direccion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FecReg)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CodEstMecNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CodTallerNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CodTipoNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CodZonaNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TipoDocNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrimNom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SeguNom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrimApe)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SeguApe)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NroDoc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NroCel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Direccion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FecReg)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodEstMecNavigation.CodEstMec)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodTallerNavigation.Direccion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodTipoNavigation.Descripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodZonaNavigation.NomZona)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoDocNavigation.TipoDoc1)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CodMec">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.CodMec">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.CodMec">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

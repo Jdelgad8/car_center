@@ -1,0 +1,49 @@
+﻿@model car_center_api.Models.FacturaDeta
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>FacturaDeta</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="CodFacDet" />
+            <div class="form-group">
+                <label asp-for="CodFacEnc" class="control-label"></label>
+                <select asp-for="CodFacEnc" class="form-control" asp-items="ViewBag.CodFacEnc"></select>
+                <span asp-validation-for="CodFacEnc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CodSolic" class="control-label"></label>
+                <select asp-for="CodSolic" class="form-control" asp-items="ViewBag.CodSolic"></select>
+                <span asp-validation-for="CodSolic" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CodSolSerRep" class="control-label"></label>
+                <select asp-for="CodSolSerRep" class="form-control" asp-items="ViewBag.CodSolSerRep"></select>
+                <span asp-validation-for="CodSolSerRep" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VlrSub" class="control-label"></label>
+                <input asp-for="VlrSub" class="form-control" />
+                <span asp-validation-for="VlrSub" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

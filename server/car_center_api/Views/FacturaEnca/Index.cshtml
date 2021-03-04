@@ -1,0 +1,77 @@
+﻿@model IEnumerable<car_center_api.Models.FacturaEnca>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.VlrDcto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FecFac)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VlrTot)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VlrIva)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CodCliNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CodEstFacNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CodMecNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CodPagoNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.VlrDcto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FecFac)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VlrTot)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VlrIva)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodCliNavigation.Direccion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodEstFacNavigation.CodEstFac)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodMecNavigation.CodEstMec)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodPagoNavigation.Descripcion)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CodFacEnc">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.CodFacEnc">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.CodFacEnc">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

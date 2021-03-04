@@ -1,0 +1,41 @@
+﻿@model IEnumerable<car_center_api.Models.DctoFactura>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.VlrMinDcto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PorcDcto)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.VlrMinDcto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PorcDcto)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CodDcto">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.CodDcto">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.CodDcto">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

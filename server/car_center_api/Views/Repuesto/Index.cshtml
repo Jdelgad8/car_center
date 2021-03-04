@@ -1,0 +1,53 @@
+﻿@model IEnumerable<car_center_api.Models.Repuesto>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NomRep)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VlrRep)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CodCalRepNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CodTipoNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomRep)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VlrRep)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodCalRepNavigation.Descripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodTipoNavigation.Descripcion)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CodRep">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.CodRep">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.CodRep">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,53 @@
+﻿@model IEnumerable<car_center_api.Models.FacturaDeta>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.VlrSub)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CodFacEncNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CodSolSerRepNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CodSolicNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.VlrSub)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodFacEncNavigation.CodEstFac)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodSolSerRepNavigation.CodSolSerRep)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodSolicNavigation.CodSolic)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CodFacDet">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.CodFacDet">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.CodFacDet">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

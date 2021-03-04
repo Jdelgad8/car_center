@@ -1,0 +1,42 @@
+﻿@model car_center_api.Models.Serviciot
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Serviciot</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.VlrMin)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.VlrMin)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.VlrMax)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.VlrMax)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.DurMin)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DurMin)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CodTipoNavigation)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CodTipoNavigation.Descripcion)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.CodSer">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

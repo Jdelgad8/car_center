@@ -1,0 +1,69 @@
+﻿@model car_center_api.Models.FacturaEnca
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>FacturaEnca</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CodFacEnc" class="control-label"></label>
+                <input asp-for="CodFacEnc" class="form-control" />
+                <span asp-validation-for="CodFacEnc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CodEstFac" class="control-label"></label>
+                <select asp-for="CodEstFac" class ="form-control" asp-items="ViewBag.CodEstFac"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="CodCli" class="control-label"></label>
+                <select asp-for="CodCli" class ="form-control" asp-items="ViewBag.CodCli"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="CodMec" class="control-label"></label>
+                <select asp-for="CodMec" class ="form-control" asp-items="ViewBag.CodMec"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="CodPago" class="control-label"></label>
+                <select asp-for="CodPago" class ="form-control" asp-items="ViewBag.CodPago"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="VlrDcto" class="control-label"></label>
+                <input asp-for="VlrDcto" class="form-control" />
+                <span asp-validation-for="VlrDcto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FecFac" class="control-label"></label>
+                <input asp-for="FecFac" class="form-control" />
+                <span asp-validation-for="FecFac" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VlrTot" class="control-label"></label>
+                <input asp-for="VlrTot" class="form-control" />
+                <span asp-validation-for="VlrTot" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VlrIva" class="control-label"></label>
+                <input asp-for="VlrIva" class="form-control" />
+                <span asp-validation-for="VlrIva" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
